@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:latest
+    container_name: todo_mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: todo_db
+      MYSQL_USER: todo_user
+      MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"  # ✅ Exposing MySQL on default port
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./backend/init.sql:/docker-entrypoint-initdb.d/init.sql  # ✅ Run SQL on first startup
+
+  backend:
+    build: ./backend
+    container_name: todo_backend
+    restart: always
+    depends_on:
+      - mysql
+    environment:
+      DB_HOST: todo_mysql
+      DB_USER: todo_user
+      DB_PASSWORD: password
+      DB_NAME: todo_db
+      DB_PORT: 3306
+    ports:
+      - "5000:5000"  # ✅ Exposing backend API on port 5000
+    volumes:
+      - ./backend:/usr/src/app
+    command: ["node", "server.js"]
+
+volumes:
+  mysql_data:
