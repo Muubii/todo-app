@@ -3,7 +3,11 @@ import { View, Text, StyleSheet, TextInput, TouchableOpacity, FlatList, Alert, P
 import { useRouter } from "expo-router";
 import Icon from "react-native-vector-icons/FontAwesome";
 
-const API_URL = Platform.OS === "android" ? "http://10.0.2.2:5000" : "http://localhost:5000";
+const API_URL =
+Platform.OS === "android"
+  ? "http://10.0.2.2:5000" 
+  : "http://localhost:5000"; 
+
 
 export default function DashboardScreen() {
   const router = useRouter();
