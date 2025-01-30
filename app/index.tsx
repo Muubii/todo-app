@@ -2,7 +2,6 @@ import { useRouter } from "expo-router";
 import React, { useState } from "react";
 import { StyleSheet, View, Text, TextInput, TouchableOpacity, Alert, Platform } from "react-native";
 
-// ✅ Set API URL dynamically based on platform
 const API_URL =
   Platform.OS === "android"
     ? "http://10.0.2.2:5000" 
@@ -84,7 +83,6 @@ export default function HomeScreen() {
   );
 }
 
-// ✅ Styles
 const styles = StyleSheet.create({
   container: {
     flex: 1,
