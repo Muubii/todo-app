@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, TouchableOpacity, TextInput, Alert } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, TextInput, Alert, Platform } from "react-native";
 import { useRouter } from "expo-router";
 import { useState, useEffect } from "react";
 import Icon from "react-native-vector-icons/FontAwesome"; 

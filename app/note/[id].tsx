@@ -1,5 +1,5 @@
 import { useLocalSearchParams, useRouter } from "expo-router";
-import { View, TextInput, TouchableOpacity, Alert, Text, StyleSheet } from "react-native";
+import { View, TextInput, TouchableOpacity, Alert, Text, StyleSheet, Platform } from "react-native"; 
 import { useState, useEffect } from "react";
 
 export default function NoteDetailScreen() {
