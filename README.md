@@ -74,5 +74,5 @@ PORT=5000
 
 ### **🎯 Roadmap** 
 📌 Implement dark mode  
-📌 Allow users to set due dates for todos  
+📌 Allow users to set due dates for their todos  
 
